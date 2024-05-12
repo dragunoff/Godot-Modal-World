@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcmkg8wlloruy"]
+
+[ext_resource type="PackedScene" uid="uid://b3igwycksok5i" path="res://examples/Example.tscn" id="1_acjrk"]
+[ext_resource type="Script" path="res://addons/modal_world/resources/ModalAction/ModalAction.gd" id="2_5lm5c"]
+[ext_resource type="Script" path="res://addons/modal_world/resources/ModalConfig/ModalConfig.gd" id="3_h1tqn"]
+
+[sub_resource type="Resource" id="Resource_466rk"]
+script = ExtResource("2_5lm5c")
+label = "Yes"
+resolution = "yes"
+grab_focus = false
+
+[sub_resource type="Resource" id="Resource_ivh6e"]
+script = ExtResource("2_5lm5c")
+label = "No"
+resolution = "no"
+grab_focus = true
+
+[sub_resource type="Resource" id="Resource_tkfro"]
+script = ExtResource("2_5lm5c")
+label = "Maybe"
+resolution = "maybe"
+grab_focus = true
+
+[sub_resource type="Resource" id="Resource_qtnk8"]
+script = ExtResource("3_h1tqn")
+title = "Are you sure?"
+body = ""
+actions = Array[ExtResource("2_5lm5c")]([SubResource("Resource_466rk"), SubResource("Resource_ivh6e"), SubResource("Resource_tkfro")])
+backdrop = Color(0, 0, 0, 0.5)
+
+[node name="ThreeButtonPrompt" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Example" parent="." instance=ExtResource("1_acjrk")]
+layout_mode = 1
+config = SubResource("Resource_qtnk8")

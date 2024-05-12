@@ -1,0 +1,15 @@
+# IDE ignores
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# OS ignores
+.DS_Store
+
+# Godot 4+ specific ignores
+/.godot/
+/addons/*
+!/addons/modal_world
+
+# Exported binaries
+/export/

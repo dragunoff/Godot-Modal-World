@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://uwqr7feeehd1"]
+
+[ext_resource type="Script" path="res://addons/modal_world/scenes/ModalWrapper/ModalWrapper.gd" id="1_q0jb2"]
+
+[node name="ModalWrapper" type="CanvasLayer" node_paths=PackedStringArray("backdrop")]
+layer = 128
+script = ExtResource("1_q0jb2")
+backdrop = NodePath("ColorRect")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)

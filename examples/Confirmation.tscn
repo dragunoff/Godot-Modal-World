@@ -1,0 +1,51 @@
+[gd_scene load_steps=11 format=3 uid="uid://1ru77bgp8u8"]
+
+[ext_resource type="Script" path="res://addons/modal_world/resources/ModalAction/ModalAction.gd" id="2_bq6lc"]
+[ext_resource type="Script" path="res://addons/modal_world/resources/ModalConfig/ModalConfig.gd" id="3_cuhpf"]
+[ext_resource type="PackedScene" uid="uid://b3igwycksok5i" path="res://examples/Example.tscn" id="4_ng6fe"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_6ir37"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_60y8b"]
+events = [SubResource("InputEventKey_6ir37")]
+
+[sub_resource type="Resource" id="Resource_466rk"]
+script = ExtResource("2_bq6lc")
+label = "Confirm"
+resolution = "confirmed"
+grab_focus = false
+shortcut = SubResource("Shortcut_60y8b")
+
+[sub_resource type="InputEventAction" id="InputEventAction_ano80"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_jp4xf"]
+events = [SubResource("InputEventAction_ano80")]
+
+[sub_resource type="Resource" id="Resource_ivh6e"]
+script = ExtResource("2_bq6lc")
+label = "Cancel"
+resolution = "cancelled"
+grab_focus = true
+shortcut = SubResource("Shortcut_jp4xf")
+
+[sub_resource type="Resource" id="Resource_qtnk8"]
+script = ExtResource("3_cuhpf")
+title = "Confirmation"
+body = "A dialog with two actions."
+actions = Array[ExtResource("2_bq6lc")]([SubResource("Resource_466rk"), SubResource("Resource_ivh6e")])
+backdrop = Color(0, 0, 0, 0.5)
+
+[node name="Confirmation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Example" parent="." instance=ExtResource("4_ng6fe")]
+layout_mode = 1
+config = SubResource("Resource_qtnk8")
