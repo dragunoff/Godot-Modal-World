@@ -42,18 +42,22 @@ func _steal_focus() -> void:
 
 ## Set the title label text.
 func _setup_title() -> void:
+	if not is_instance_valid(title_label):
+		return
+
 	if config.title:
-		if is_instance_valid(title_label):
-			title_label.text = config.title
+		title_label.text = config.title
 	else:
 		title_label.queue_free()
 
 
 ## Set the body label text.
 func _setup_body() -> void:
+	if not is_instance_valid(body_label):
+		return
+
 	if config.body:
-		if is_instance_valid(body_label):
-			body_label.text = config.body
+		body_label.text = config.body
 	else:
 		body_label.queue_free()
 
