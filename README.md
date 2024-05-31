@@ -65,5 +65,6 @@ The `ModalWorld.open` method returns a `ModalWindow` instance which emits a `res
 
 ## Notes
 
+- To use modals when game is paused make sure the modal scene has the appropriate `process_mode` set.
 - Nested modals are supported but not recommended as that is an anti-pattern.
 - The screenshots show the default Godot theme but theming is completely under your control - the modals will use the theme of your project (or whatever theme is attached to the modal scene).
