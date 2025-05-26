@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dgdysqjx0hxq3"]
 
-[ext_resource type="Script" path="res://addons/modal_world/nodes/ModalWindow/ModalWindow.gd" id="1_6605b"]
+[ext_resource type="Script" uid="uid://dxhhfry121n47" path="res://addons/modal_world/nodes/ModalWindow/ModalWindow.gd" id="1_6605b"]
 
 [node name="ModalWindow" type="Control" node_paths=PackedStringArray("title_label", "body_label", "buttons")]
 layout_mode = 3
