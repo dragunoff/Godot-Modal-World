@@ -28,7 +28,6 @@ func _ready() -> void:
 		"Number of buttons is less than the number of actions."
 	)
 
-	_steal_focus()
 	_setup_title()
 	_setup_body()
 	_setup_action_buttons()
@@ -62,8 +61,12 @@ func _setup_body() -> void:
 		body_label.queue_free()
 
 
-## Assign modal actions to buttons.## Set the title label text.
+## Assign modal actions to buttons.
 func _setup_action_buttons() -> void:
+	if config.actions.is_empty():
+		_steal_focus()
+		return
+
 	for n in config.actions.size():
 		var button = buttons[n]
 		var action = config.actions[n]
