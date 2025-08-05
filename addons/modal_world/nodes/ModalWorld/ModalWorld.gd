@@ -14,10 +14,14 @@ const WRAPPER_SCENE := preload("res://addons/modal_world/scenes/ModalWrapper/Mod
 ## Returns the modal instance.
 func open(scene: String, config: ModalConfig) -> ModalWindow:
 	var modal: ModalWindow = load(scene).instantiate() as ModalWindow
-	modal.config = config
+
+	if config != null:
+		modal.config = config
+
+	assert(is_instance_valid(modal.config))
 
 	var wrapper = WRAPPER_SCENE.instantiate()
-	wrapper.backdrop.color = config.backdrop
+	wrapper.backdrop.color = modal.config.backdrop
 	wrapper.add_child(modal)
 	get_viewport().add_child(wrapper)
 
