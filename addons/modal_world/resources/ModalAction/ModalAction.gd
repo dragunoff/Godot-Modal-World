@@ -27,4 +27,4 @@ func _init(
 	label = _label
 	resolution = _resolution
 	grab_focus = _grab_focus
-	_shortcut = shortcut
+	shortcut = _shortcut
