@@ -63,10 +63,6 @@ func _setup_body() -> void:
 
 ## Assign modal actions to buttons.
 func _setup_action_buttons() -> void:
-	if config.actions.is_empty():
-		_steal_focus()
-		return
-
 	for n in config.actions.size():
 		var button = buttons[n]
 		var action = config.actions[n]
@@ -77,7 +73,7 @@ func _setup_action_buttons() -> void:
 
 		# NOTE: Always auto-focus the first action
 		# to make sure a button in the modal has focus
-		if action.grab_focus || n == 0:
+		if config.auto_focus && action.grab_focus || n == 0:
 			button.grab_focus.call_deferred()
 
 		if is_instance_valid(action.shortcut):
@@ -85,3 +81,6 @@ func _setup_action_buttons() -> void:
 
 	for unused_button in buttons.slice(config.actions.size()):
 		unused_button.queue_free()
+
+	if config.auto_focus && config.actions.is_empty():
+		_steal_focus()

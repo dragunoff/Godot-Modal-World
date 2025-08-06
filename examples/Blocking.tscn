@@ -10,6 +10,7 @@ title = "Blocking"
 body = "A modal without any actions"
 actions = Array[ExtResource("2_72mlg")]([])
 backdrop = Color(0, 0, 0, 0.5)
+auto_focus = true
 
 [node name="Blocking" type="Control"]
 layout_mode = 3

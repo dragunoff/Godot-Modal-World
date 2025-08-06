@@ -37,6 +37,7 @@ title = "Confirmation"
 body = "A dialog with two actions."
 actions = Array[ExtResource("2_bq6lc")]([SubResource("Resource_466rk"), SubResource("Resource_ivh6e")])
 backdrop = Color(0, 0, 0, 0.5)
+auto_focus = true
 
 [node name="Confirmation" type="Control"]
 layout_mode = 3

@@ -28,6 +28,7 @@ title = "Are you sure?"
 body = ""
 actions = Array[ExtResource("2_5lm5c")]([SubResource("Resource_466rk"), SubResource("Resource_ivh6e"), SubResource("Resource_tkfro")])
 backdrop = Color(0, 0, 0, 0.5)
+auto_focus = true
 
 [node name="ThreeButtonPrompt" type="Control"]
 layout_mode = 3
