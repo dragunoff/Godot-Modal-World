@@ -21,6 +21,9 @@ signal resolved(resolution: String)
 ## Array of [Button] nodes for each modal action in the config.
 @export var buttons: Array[Button] = []
 
+## Optional data passed into this modal window.
+var data: Variant
+
 
 func _ready() -> void:
 	assert(
