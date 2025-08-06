@@ -3,7 +3,7 @@ extends Control
 ## A modal window instance.
 
 ## Emitted when a modal action button is pressed.
-signal resolved(resolution: String)
+signal resolved(resolution: ModalResolution)
 
 @export_category("Config")
 
@@ -72,7 +72,7 @@ func _setup_action_buttons() -> void:
 
 		button.text = action.label
 
-		button.pressed.connect(func(): resolved.emit(action.resolution), CONNECT_ONE_SHOT)
+		button.pressed.connect(func(): resolve(action.resolution), CONNECT_ONE_SHOT)
 
 		# NOTE: Always auto-focus the first action
 		# to make sure a button in the modal has focus
@@ -87,3 +87,8 @@ func _setup_action_buttons() -> void:
 
 	if config.auto_focus && config.actions.is_empty():
 		_steal_focus()
+
+
+## Resolve the modal with given [ModalResolution] or [null]
+func resolve(resolution: ModalResolution = null) -> void:
+	resolved.emit(resolution)

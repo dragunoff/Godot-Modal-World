@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://3la6r756aahe" path="res://examples/Example.gd" id="1_423nq"]
 
-[node name="Example" type="CenterContainer" node_paths=PackedStringArray("open_button", "resolution_label")]
+[node name="Example" type="CenterContainer" node_paths=PackedStringArray("open_button", "resolution_label", "payload_label")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -11,6 +11,7 @@ grow_vertical = 2
 script = ExtResource("1_423nq")
 open_button = NodePath("VBoxContainer/Button")
 resolution_label = NodePath("VBoxContainer/Resolution")
+payload_label = NodePath("VBoxContainer/Payload")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -20,4 +21,7 @@ layout_mode = 2
 text = "Open modal"
 
 [node name="Resolution" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Payload" type="Label" parent="VBoxContainer"]
 layout_mode = 2

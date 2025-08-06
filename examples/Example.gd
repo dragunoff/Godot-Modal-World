@@ -9,6 +9,9 @@ extends Control
 ## [Label] that displays the modal resolution.
 @export var resolution_label: Label
 
+## [Label] that displays the resolution payload.
+@export var payload_label: Label
+
 @export_category("Modal")
 
 ## The modal window scene.
@@ -17,10 +20,14 @@ extends Control
 ## [ModalConfig] for this instance.
 @export var config: ModalConfig
 
+## Custom data passed into this instance.
+@export var data: String
+
 
 func _ready() -> void:
 	assert(is_instance_valid(open_button))
 	assert(is_instance_valid(resolution_label))
+	assert(is_instance_valid(payload_label))
 	assert(is_instance_valid(config))
 
 	open_button.grab_focus()
@@ -29,7 +36,12 @@ func _ready() -> void:
 		var modal: ModalWindow = ModalWorld.open(scene, config)
 
 		modal.resolved.connect(func(resolution):
-			resolution_label.text = "Modal resolved with \"%s\"" % resolution
+			var reason: String = resolution.reason if resolution != null else "null"
+			resolution_label.text = "Reason: \"%s\"" % reason
+
+			if resolution != null:
+				payload_label.text = "Payload: \"%s\"" % resolution.payload
+
 			open_button.grab_focus()
-		, CONNECT_ONE_SHOT)
+		)
 	)

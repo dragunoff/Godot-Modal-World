@@ -1,25 +1,44 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcmkg8wlloruy"]
+[gd_scene load_steps=12 format=3 uid="uid://bcmkg8wlloruy"]
 
 [ext_resource type="PackedScene" uid="uid://b3igwycksok5i" path="res://examples/Example.tscn" id="1_acjrk"]
 [ext_resource type="Script" uid="uid://bqlym4w4ll55q" path="res://addons/modal_world/resources/ModalAction/ModalAction.gd" id="2_5lm5c"]
+[ext_resource type="Script" uid="uid://4eycdpe3ixpl" path="res://addons/modal_world/resources/ModalResolution/ModalResolution.gd" id="3_8kp4c"]
 [ext_resource type="Script" uid="uid://cyf0rv7wgonax" path="res://addons/modal_world/resources/ModalConfig/ModalConfig.gd" id="3_h1tqn"]
+
+[sub_resource type="Resource" id="Resource_6j1ve"]
+script = ExtResource("3_8kp4c")
+reason = "yes"
+payload = {}
+metadata/_custom_type_script = "uid://4eycdpe3ixpl"
 
 [sub_resource type="Resource" id="Resource_466rk"]
 script = ExtResource("2_5lm5c")
 label = "Yes"
-resolution = "yes"
+resolution = SubResource("Resource_6j1ve")
 grab_focus = false
+
+[sub_resource type="Resource" id="Resource_8kp4c"]
+script = ExtResource("3_8kp4c")
+reason = "no"
+payload = {}
+metadata/_custom_type_script = "uid://4eycdpe3ixpl"
 
 [sub_resource type="Resource" id="Resource_ivh6e"]
 script = ExtResource("2_5lm5c")
 label = "No"
-resolution = "no"
+resolution = SubResource("Resource_8kp4c")
 grab_focus = true
+
+[sub_resource type="Resource" id="Resource_fu1mq"]
+script = ExtResource("3_8kp4c")
+reason = "maybe"
+payload = {}
+metadata/_custom_type_script = "uid://4eycdpe3ixpl"
 
 [sub_resource type="Resource" id="Resource_tkfro"]
 script = ExtResource("2_5lm5c")
 label = "Maybe"
-resolution = "maybe"
+resolution = SubResource("Resource_fu1mq")
 grab_focus = true
 
 [sub_resource type="Resource" id="Resource_qtnk8"]

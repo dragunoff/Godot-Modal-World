@@ -1,8 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://1ru77bgp8u8"]
+[gd_scene load_steps=14 format=3 uid="uid://1ru77bgp8u8"]
 
 [ext_resource type="Script" uid="uid://bqlym4w4ll55q" path="res://addons/modal_world/resources/ModalAction/ModalAction.gd" id="2_bq6lc"]
 [ext_resource type="Script" uid="uid://cyf0rv7wgonax" path="res://addons/modal_world/resources/ModalConfig/ModalConfig.gd" id="3_cuhpf"]
+[ext_resource type="Script" uid="uid://4eycdpe3ixpl" path="res://addons/modal_world/resources/ModalResolution/ModalResolution.gd" id="3_gh72u"]
 [ext_resource type="PackedScene" uid="uid://b3igwycksok5i" path="res://examples/Example.tscn" id="4_ng6fe"]
+
+[sub_resource type="Resource" id="Resource_ihsje"]
+script = ExtResource("3_gh72u")
+reason = "confirmed"
+payload = {}
+metadata/_custom_type_script = "uid://4eycdpe3ixpl"
 
 [sub_resource type="InputEventKey" id="InputEventKey_6ir37"]
 device = -1
@@ -14,9 +21,15 @@ events = [SubResource("InputEventKey_6ir37")]
 [sub_resource type="Resource" id="Resource_466rk"]
 script = ExtResource("2_bq6lc")
 label = "Confirm"
-resolution = "confirmed"
+resolution = SubResource("Resource_ihsje")
 grab_focus = false
 shortcut = SubResource("Shortcut_60y8b")
+
+[sub_resource type="Resource" id="Resource_gh72u"]
+script = ExtResource("3_gh72u")
+reason = "cancelled"
+payload = {}
+metadata/_custom_type_script = "uid://4eycdpe3ixpl"
 
 [sub_resource type="InputEventAction" id="InputEventAction_ano80"]
 action = &"ui_cancel"
@@ -27,7 +40,7 @@ events = [SubResource("InputEventAction_ano80")]
 [sub_resource type="Resource" id="Resource_ivh6e"]
 script = ExtResource("2_bq6lc")
 label = "Cancel"
-resolution = "cancelled"
+resolution = SubResource("Resource_gh72u")
 grab_focus = true
 shortcut = SubResource("Shortcut_jp4xf")
 
