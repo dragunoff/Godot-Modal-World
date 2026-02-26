@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://gbog4jsrtc0p"]
+[gd_scene format=3 uid="uid://gbog4jsrtc0p"]
 
 [ext_resource type="PackedScene" uid="uid://b3igwycksok5i" path="res://examples/Example.tscn" id="1_fa246"]
 [ext_resource type="Script" uid="uid://bqlym4w4ll55q" path="res://addons/modal_world/resources/ModalAction/ModalAction.gd" id="2_8o8ik"]
@@ -7,17 +7,14 @@
 [sub_resource type="Resource" id="Resource_466rk"]
 script = ExtResource("2_8o8ik")
 label = "Confirm"
-grab_focus = false
 
 [sub_resource type="Resource" id="Resource_qtnk8"]
 script = ExtResource("3_lxtxg")
 title = "Notification"
 body = "A dialog with a single action."
 actions = Array[ExtResource("2_8o8ik")]([SubResource("Resource_466rk")])
-backdrop = Color(0, 0, 0, 0.5)
-auto_focus = true
 
-[node name="Notification" type="Control"]
+[node name="Notification" type="Control" unique_id=501750361]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,6 +22,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Example" parent="." instance=ExtResource("1_fa246")]
+[node name="Example" parent="." unique_id=1272687278 instance=ExtResource("1_fa246")]
 layout_mode = 1
 config = SubResource("Resource_qtnk8")

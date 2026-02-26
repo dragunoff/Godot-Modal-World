@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://1ru77bgp8u8"]
+[gd_scene format=3 uid="uid://1ru77bgp8u8"]
 
 [ext_resource type="Script" uid="uid://bqlym4w4ll55q" path="res://addons/modal_world/resources/ModalAction/ModalAction.gd" id="2_bq6lc"]
 [ext_resource type="Script" uid="uid://cyf0rv7wgonax" path="res://addons/modal_world/resources/ModalConfig/ModalConfig.gd" id="3_cuhpf"]
@@ -8,7 +8,6 @@
 [sub_resource type="Resource" id="Resource_ihsje"]
 script = ExtResource("3_gh72u")
 reason = "confirmed"
-payload = {}
 metadata/_custom_type_script = "uid://4eycdpe3ixpl"
 
 [sub_resource type="InputEventKey" id="InputEventKey_6ir37"]
@@ -22,13 +21,11 @@ events = [SubResource("InputEventKey_6ir37")]
 script = ExtResource("2_bq6lc")
 label = "Confirm"
 resolution = SubResource("Resource_ihsje")
-grab_focus = false
 shortcut = SubResource("Shortcut_60y8b")
 
 [sub_resource type="Resource" id="Resource_gh72u"]
 script = ExtResource("3_gh72u")
 reason = "cancelled"
-payload = {}
 metadata/_custom_type_script = "uid://4eycdpe3ixpl"
 
 [sub_resource type="InputEventAction" id="InputEventAction_ano80"]
@@ -49,10 +46,8 @@ script = ExtResource("3_cuhpf")
 title = "Confirmation"
 body = "A dialog with two actions."
 actions = Array[ExtResource("2_bq6lc")]([SubResource("Resource_466rk"), SubResource("Resource_ivh6e")])
-backdrop = Color(0, 0, 0, 0.5)
-auto_focus = true
 
-[node name="Confirmation" type="Control"]
+[node name="Confirmation" type="Control" unique_id=146656543]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,6 +55,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Example" parent="." instance=ExtResource("4_ng6fe")]
+[node name="Example" parent="." unique_id=107990826 instance=ExtResource("4_ng6fe")]
 layout_mode = 1
 config = SubResource("Resource_qtnk8")

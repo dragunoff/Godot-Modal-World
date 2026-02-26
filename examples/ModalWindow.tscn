@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgdysqjx0hxq3"]
+[gd_scene format=3 uid="uid://dgdysqjx0hxq3"]
 
 [ext_resource type="Script" uid="uid://dxhhfry121n47" path="res://addons/modal_world/nodes/ModalWindow/ModalWindow.gd" id="1_6605b"]
 
-[node name="ModalWindow" type="Control" node_paths=PackedStringArray("title_label", "body_label", "buttons")]
+[node name="ModalWindow" type="Control" unique_id=1980958713 node_paths=PackedStringArray("title_label", "body_label", "buttons")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +14,7 @@ title_label = NodePath("PanelContainer/VBoxContainer/MarginContainer#Title/Title
 body_label = NodePath("PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/MarginContainer/Body")
 buttons = [NodePath("PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer#Actions/Action1"), NodePath("PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer#Actions/Action2"), NodePath("PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer#Actions/Action3")]
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1733349389]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -29,52 +29,52 @@ offset_bottom = 34.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1782126762]
 layout_mode = 2
 
-[node name="MarginContainer#Title" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+[node name="MarginContainer#Title" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=2107858846]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Title" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer#Title"]
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer#Title" unique_id=1171628628]
 layout_mode = 2
 theme_type_variation = &"HeaderMedium"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=935693626]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=964542449]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer" unique_id=256696166]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=607681605]
 layout_mode = 2
 theme_override_constants/margin_bottom = 16
 
-[node name="Body" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="Body" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=1354606411]
 layout_mode = 2
 horizontal_alignment = 1
 
-[node name="VBoxContainer#Actions" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer#Actions" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1801935792]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Action1" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer#Actions"]
+[node name="Action1" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer#Actions" unique_id=632503518]
 layout_mode = 2
 
-[node name="Action2" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer#Actions"]
+[node name="Action2" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer#Actions" unique_id=221627807]
 layout_mode = 2
 
-[node name="Action3" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer#Actions"]
+[node name="Action3" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer#Actions" unique_id=1033049302]
 layout_mode = 2

@@ -15,12 +15,12 @@ universal_fade/patterns_directory="res://addons/UniversalFade/Patterns"
 [application]
 
 config/name="Modal World"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-ModalWorld="*res://addons/modal_world/nodes/ModalWorld/ModalWorld.gd"
+ModalWorld="*uid://c6o4e2au2t4ld"
 
 [editor_plugins]
 

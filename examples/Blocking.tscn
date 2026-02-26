@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ch3rt0g0jm6yl"]
+[gd_scene format=3 uid="uid://ch3rt0g0jm6yl"]
 
 [ext_resource type="PackedScene" uid="uid://b3igwycksok5i" path="res://examples/Example.tscn" id="1_clm54"]
 [ext_resource type="Script" uid="uid://bqlym4w4ll55q" path="res://addons/modal_world/resources/ModalAction/ModalAction.gd" id="2_72mlg"]
@@ -8,11 +8,8 @@
 script = ExtResource("2_oy6a6")
 title = "Blocking"
 body = "A modal without any actions"
-actions = Array[ExtResource("2_72mlg")]([])
-backdrop = Color(0, 0, 0, 0.5)
-auto_focus = true
 
-[node name="Blocking" type="Control"]
+[node name="Blocking" type="Control" unique_id=1779837269]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,6 +17,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Example" parent="." instance=ExtResource("1_clm54")]
+[node name="Example" parent="." unique_id=1877441428 instance=ExtResource("1_clm54")]
 layout_mode = 1
 config = SubResource("Resource_tsve2")
