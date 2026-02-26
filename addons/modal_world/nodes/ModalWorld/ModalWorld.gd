@@ -13,8 +13,8 @@ const WRAPPER_SCENE := preload("res://addons/modal_world/scenes/ModalWrapper/Mod
 ## [data] Optional data passed into this instance.[br]
 ##
 ## Returns the modal instance.
-func open(scene: String, config: ModalConfig, data: Variant = null) -> ModalWindow:
-	var modal: ModalWindow = load(scene).instantiate() as ModalWindow
+func open(scene: PackedScene, config: ModalConfig, data: Variant = null) -> ModalWindow:
+	var modal: ModalWindow = scene.instantiate() as ModalWindow
 
 	if config != null:
 		modal.config = config

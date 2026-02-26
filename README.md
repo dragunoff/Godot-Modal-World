@@ -26,7 +26,8 @@ You have full control over the layout of the scene. It just needs to have the `M
 Here's an example of creating a modal with two acitons in GDScript:
 
 ```GDScript
-var config = ModalConfig.new(
+var scene: PackedScene = load("path/to/your/modal/scene")
+var config := ModalConfig.new(
     "Title",
     "Body text",
     [
@@ -41,7 +42,7 @@ var config = ModalConfig.new(
     ]
 )
 
-ModalWorld.open("path/to/your/modal/scene", config)
+ModalWorld.open(scene, config)
 ```
 
 Another way is to export the config from a script so it can be managed from the resource editor in Godot:
@@ -49,7 +50,7 @@ Another way is to export the config from a script so it can be managed from the 
 ```GDScript
 extends Node
 
-@export_file("*.tscn") var scene: String
+@export var scene: PackedScene
 @export var config: ModalConfig
 
 

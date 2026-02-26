@@ -15,7 +15,7 @@ extends Control
 @export_category("Modal")
 
 ## The modal window scene.
-@export_file("*.tscn") var scene := "res://examples/ModalWindow.tscn"
+@export var scene: PackedScene
 
 ## [ModalConfig] for this instance.
 @export var config: ModalConfig
